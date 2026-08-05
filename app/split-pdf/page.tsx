@@ -15,7 +15,6 @@ const tool = getTool("split-pdf")!;
 export default function SplitPdfPage() {
   const [files, setFiles] = useState<UploadedFile[]>([]);
   const [pageCount, setPageCount] = useState<number | null>(null);
-  const [mode, setMode] = useState<"range" | "every-page">("range");
   const [startPage, setStartPage] = useState("");
   const [endPage, setEndPage] = useState("");
   const [status, setStatus] = useState<RequestStatus>("idle");
@@ -58,7 +57,7 @@ export default function SplitPdfPage() {
 
   const canSubmit =
     files.length === 1 &&
-    (mode === "every-page" || rangeIsValid) &&
+    rangeIsValid &&
     status !== "uploading" &&
     status !== "processing";
 
@@ -71,9 +70,9 @@ export default function SplitPdfPage() {
       const res = await splitPdf(
         files[0].file,
         {
-          mode,
-          startPage: mode === "range" ? start : undefined,
-          endPage: mode === "range" ? end : undefined,
+          mode: "range",
+          startPage: start,
+          endPage: end,
         },
         (p) => {
           setProgress(p);
@@ -109,63 +108,36 @@ export default function SplitPdfPage() {
 
         {files.length === 1 && (
           <div className="mt-8 space-y-5 rounded-2xl border border-ink-600/70 bg-ink-800/50 p-5">
-            <div className="flex gap-2">
-              <button
-                type="button"
-                onClick={() => setMode("range")}
-                className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
-                  mode === "range"
-                    ? "border-amber-500/60 bg-amber-500/15 text-amber-400"
-                    : "border-ink-600 text-paper-500 hover:text-paper-100"
-                }`}
-              >
-                By page range
-              </button>
-              <button
-                type="button"
-                onClick={() => setMode("every-page")}
-                className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
-                  mode === "every-page"
-                    ? "border-amber-500/60 bg-amber-500/15 text-amber-400"
-                    : "border-ink-600 text-paper-500 hover:text-paper-100"
-                }`}
-              >
-                Every page separately
-              </button>
-            </div>
-
-            {mode === "range" && (
-              <div>
-                <label className="mb-2 block font-mono text-xs uppercase tracking-widest text-paper-700">
-                  Page range
-                </label>
-                <div className="flex items-center gap-3">
-                  <input
-                    type="number"
-                    min={1}
-                    max={pageCount ?? undefined}
-                    value={startPage}
-                    onChange={(e) => setStartPage(e.target.value)}
-                    placeholder="Start"
-                    className="w-28 rounded-xl border border-ink-600 bg-ink-900 px-4 py-2.5 text-sm text-paper-100 placeholder:text-paper-700 outline-none transition-colors focus:border-amber-500/60"
-                  />
-                  <span className="text-sm text-paper-700">to</span>
-                  <input
-                    type="number"
-                    min={1}
-                    max={pageCount ?? undefined}
-                    value={endPage}
-                    onChange={(e) => setEndPage(e.target.value)}
-                    placeholder="End"
-                    className="w-28 rounded-xl border border-ink-600 bg-ink-900 px-4 py-2.5 text-sm text-paper-100 placeholder:text-paper-700 outline-none transition-colors focus:border-amber-500/60"
-                  />
-                </div>
-                <p className="mt-1.5 text-xs text-paper-700">
-                  Page numbers start at 1
-                  {pageCount ? ` · this file has ${pageCount} pages` : ""}.
-                </p>
+            <div>
+              <label className="mb-2 block font-mono text-xs uppercase tracking-widest text-paper-700">
+                Page range
+              </label>
+              <div className="flex items-center gap-3">
+                <input
+                  type="number"
+                  min={1}
+                  max={pageCount ?? undefined}
+                  value={startPage}
+                  onChange={(e) => setStartPage(e.target.value)}
+                  placeholder="Start"
+                  className="w-28 rounded-xl border border-ink-600 bg-ink-900 px-4 py-2.5 text-sm text-paper-100 placeholder:text-paper-700 outline-none transition-colors focus:border-amber-500/60"
+                />
+                <span className="text-sm text-paper-700">to</span>
+                <input
+                  type="number"
+                  min={1}
+                  max={pageCount ?? undefined}
+                  value={endPage}
+                  onChange={(e) => setEndPage(e.target.value)}
+                  placeholder="End"
+                  className="w-28 rounded-xl border border-ink-600 bg-ink-900 px-4 py-2.5 text-sm text-paper-100 placeholder:text-paper-700 outline-none transition-colors focus:border-amber-500/60"
+                />
               </div>
-            )}
+              <p className="mt-1.5 text-xs text-paper-700">
+                Page numbers start at 1
+                {pageCount ? ` · this file has ${pageCount} pages` : ""}.
+              </p>
+            </div>
           </div>
         )}
 
