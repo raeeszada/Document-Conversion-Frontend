@@ -72,7 +72,7 @@ export default function ImageToTextPage() {
           onChange={setFiles}
           accept={[".jpg", ".jpeg", ".png", ".webp"]}
           multiple={false}
-          accent="amber"
+          accent="teal"
           label="Drop an image here, or click to browse"
         />
 
