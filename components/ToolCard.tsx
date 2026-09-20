@@ -5,9 +5,9 @@ import { ICONS } from "./icon-map";
 
 export default function ToolCard({ tool, index }: { tool: ToolMeta; index: number }) {
   const Icon = ICONS[tool.icon];
-  const accent = tool.accent === "amber" ? "#F5B942" : "#2DD4BF";
-  const accentText = tool.accent === "amber" ? "text-amber-400" : "text-teal-400";
-  const accentBg = tool.accent === "amber" ? "bg-amber-500/12" : "bg-teal-400/12";
+  const accent = "#2DD4BF";
+  const accentText = "text-teal-400";
+  const accentBg = "bg-teal-400/12";
 
   return (
     <Link

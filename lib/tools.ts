@@ -8,7 +8,7 @@ export const TOOLS: ToolMeta[] = [
     description:
       "Combine multiple PDFs into a single document. Drag to reorder before you merge.",
     category: "organize",
-    accent: "amber",
+    accent: "teal",
     icon: "Layers",
   },
   {
@@ -18,7 +18,7 @@ export const TOOLS: ToolMeta[] = [
     description:
       "Break a PDF into page ranges, or export every page as its own file.",
     category: "organize",
-    accent: "amber",
+    accent: "teal",
     icon: "Scissors",
   },
   {
@@ -57,7 +57,7 @@ export const TOOLS: ToolMeta[] = [
     description:
       "Extract text from an image with OCR and generate an editable .docx.",
     category: "extract",
-    accent: "amber",
+    accent: "teal",
     icon: "ScanText",
   },
   {
@@ -67,7 +67,7 @@ export const TOOLS: ToolMeta[] = [
     description:
       "Pull plain text out of an image — copy it or download it as .txt.",
     category: "extract",
-    accent: "amber",
+    accent: "teal",
     icon: "TextSelect",
   },
 ];

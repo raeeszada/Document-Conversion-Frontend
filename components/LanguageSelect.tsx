@@ -28,7 +28,7 @@ export default function LanguageSelect({
             onClick={() => onChange(opt.value)}
             className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200 ${
               value === opt.value
-                ? "border-amber-500/60 bg-amber-500/15 text-amber-400"
+                ? "border-teal-400/60 bg-teal-400/15 text-teal-400"
                 : "border-ink-600 text-paper-500 hover:border-ink-500 hover:text-paper-100"
             }`}
           >

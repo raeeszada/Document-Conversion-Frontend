@@ -12,7 +12,7 @@ interface Props {
   multiple?: boolean;
   maxSizeMB?: number;
   allowReorder?: boolean;
-  accent?: "amber" | "teal";
+  accent?: "teal";
   label?: string;
   hint?: string;
 }
@@ -24,7 +24,7 @@ export default function FileDropzone({
   multiple = false,
   maxSizeMB = 25,
   allowReorder = false,
-  accent = "amber",
+  accent = "teal",
   label = "Drop files here, or click to browse",
   hint,
 }: Props) {
@@ -33,9 +33,9 @@ export default function FileDropzone({
   const inputRef = useRef<HTMLInputElement>(null);
 
   const acceptAttr = accept.join(",");
-  const accentText = accent === "amber" ? "text-amber-400" : "text-teal-400";
-  const accentBorder = accent === "amber" ? "border-amber-500/60" : "border-teal-400/60";
-  const accentBg = accent === "amber" ? "bg-amber-500/8" : "bg-teal-400/8";
+  const accentText = "text-teal-400";
+  const accentBorder = "border-teal-400/60";
+  const accentBg = "bg-teal-400/8";
 
   const validate = useCallback(
     (incoming: File[]): { valid: File[]; problem: string | null } => {

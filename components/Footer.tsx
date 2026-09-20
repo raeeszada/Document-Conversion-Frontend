@@ -24,7 +24,7 @@ export default function Footer() {
               <li key={t.slug}>
                 <Link
                   href={`/${t.slug}`}
-                  className="text-sm text-paper-500 transition-colors hover:text-amber-400"
+                  className="text-sm text-paper-500 transition-colors hover:text-teal-400"
                 >
                   {t.name}
                 </Link>
@@ -42,7 +42,7 @@ export default function Footer() {
               <li key={t.slug}>
                 <Link
                   href={`/${t.slug}`}
-                  className="text-sm text-paper-500 transition-colors hover:text-amber-400"
+                  className="text-sm text-paper-500 transition-colors hover:text-teal-400"
                 >
                   {t.name}
                 </Link>

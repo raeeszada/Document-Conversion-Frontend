@@ -16,7 +16,7 @@ body {
 }
 
 ::selection {
-  background-color: #f5b94255;
+  background-color: #14b8a655;
   color: #fff;
 }
 
@@ -39,7 +39,7 @@ body {
 
 /* Keyboard focus visibility, kept even where hover styles hide outlines */
 :focus-visible {
-  outline: 2px solid #f5b942;
+  outline: 2px solid #14b8a6;
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -74,7 +74,7 @@ body {
   height: 0;
   border-style: solid;
   border-width: 0 34px 34px 0;
-  border-color: transparent var(--dogear-color, #1f2635) transparent transparent;
+  border-color: transparent var(--dogear-color, #14b8a6) transparent transparent;
   filter: drop-shadow(-2px 2px 3px rgba(0, 0, 0, 0.35));
   transition: border-width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -89,7 +89,7 @@ body {
 .bg-radial-fade {
   background: radial-gradient(
     circle at 50% 0%,
-    rgba(245, 185, 66, 0.14),
+    rgba(20, 184, 166, 0.14),
     transparent 60%
   );
 }

@@ -5,18 +5,16 @@ export default function SubmitButton({
   disabled,
   loading,
   children,
-  accent = "amber",
+  accent = "teal",
 }: {
   onClick: () => void;
   disabled?: boolean;
   loading?: boolean;
   children: React.ReactNode;
-  accent?: "amber" | "teal";
+  accent?: "teal";
 }) {
   const bg =
-    accent === "amber"
-      ? "bg-amber-500 hover:bg-amber-400 hover:shadow-[0_0_0_6px_rgba(245,185,66,0.16)]"
-      : "bg-teal-400 hover:bg-teal-300 hover:shadow-[0_0_0_6px_rgba(45,212,191,0.16)]";
+    "bg-teal-400 hover:bg-teal-300 hover:shadow-[0_0_0_6px_rgba(45,212,191,0.16)]";
 
   return (
     <button

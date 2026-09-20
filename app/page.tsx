@@ -18,14 +18,14 @@ export default function HomePage() {
               7 tools, 0 sign-up
             </span>
 
-            <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight text-paper-100 sm:text-6xl">
+            <h1 className="mt-6 font-display text-5xl font-semibold italic leading-[1.05] tracking-tight text-paper-100 sm:text-6xl">
               Your PDFs, reshaped
               <br />
               <span className="relative inline-block">
                 <span className="relative z-10">on your terms.</span>
                 <span
                   aria-hidden
-                  className="absolute inset-x-0 bottom-1 z-0 h-4 origin-left animate-stampIn rounded-sm bg-amber-500/25 sm:h-5"
+                  className="absolute inset-x-0 bottom-1 z-0 h-4 origin-left animate-stampIn rounded-sm bg-teal-400/25 sm:h-5"
                 />
               </span>
             </h1>
@@ -39,7 +39,7 @@ export default function HomePage() {
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <Link
                 href="#tools"
-                className="group inline-flex items-center gap-2 rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-ink-950 transition-all duration-200 hover:bg-amber-400 hover:shadow-[0_0_0_6px_rgba(245,185,66,0.16)] active:scale-95"
+                className="group inline-flex items-center gap-2 rounded-full bg-teal-400 px-6 py-3 text-sm font-semibold text-ink-950 transition-all duration-200 hover:bg-teal-300 hover:shadow-[0_0_0_6px_rgba(45,212,191,0.16)] active:scale-95"
               >
                 Browse the toolkit
                 <ArrowRight
@@ -61,7 +61,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 rotate-[10deg] rounded-lg border border-ink-500 bg-ink-700 shadow-xl" />
                 <div className="absolute inset-0 rotate-[-6deg] rounded-lg border border-ink-500 bg-ink-700 shadow-xl" />
                 <div className="absolute inset-0 animate-float rounded-lg border border-ink-500 bg-ink-800 shadow-2xl">
-                  <div className="absolute right-0 top-0 h-8 w-8 rounded-bl-lg rounded-tr-lg bg-amber-500/25" />
+                  <div className="absolute right-0 top-0 h-8 w-8 rounded-bl-lg rounded-tr-lg bg-teal-400/25" />
                   <div className="mt-9 space-y-2.5 px-4">
                     <div className="h-2 w-3/4 rounded-full bg-paper-700/50" />
                     <div className="h-2 w-full rounded-full bg-paper-700/40" />
@@ -138,7 +138,7 @@ function Feature({
 }) {
   return (
     <div className="flex items-start gap-3">
-      <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-ink-700 text-amber-400">
+      <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-ink-700 text-teal-400">
         {icon}
       </span>
       <div>
