@@ -52,7 +52,7 @@ export default function MergePdfPage() {
           accept={[".pdf"]}
           multiple
           allowReorder
-          accent="amber"
+          accent="teal"
           label="Drop two or more PDFs here, or click to browse"
           hint=".pdf · up to 25 MB each · order shown below"
         />

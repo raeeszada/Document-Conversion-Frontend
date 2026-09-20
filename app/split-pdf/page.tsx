@@ -96,7 +96,7 @@ export default function SplitPdfPage() {
           onChange={setFiles}
           accept={[".pdf"]}
           multiple={false}
-          accent="amber"
+          accent="teal"
           label="Drop a PDF here, or click to browse"
         />
 
